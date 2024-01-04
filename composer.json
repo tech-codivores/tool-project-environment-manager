@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "codivores/tool-project-environment-manager",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Tool to manage project environments.",
     "license": "DBAD",
     "require": {
         "php": "^8.1",
