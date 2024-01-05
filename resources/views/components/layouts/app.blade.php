@@ -11,6 +11,8 @@
 <body class="min-h-screen w-full bg-white dark:bg-gray-900">
     <div class="overflow-auto px-3" style="height:calc(100vh - 40px)">
         {{ $slot }}
+
+        <livewire:command.project_process />
     </div>
 
     <footer
