@@ -19,7 +19,8 @@
                 </div>
                 @if ($isDockerRunning)
                     @if (in_array($item['slug'], $runningList))
-                        <a href="{{ route('project.stop', ['slug' => $item['slug']]) }}">
+                        <div class="cursor-pointer"
+                            wire:click="$dispatch('command-execute', { action: 'stop', slug: '{{ $item['slug'] }}' })">
                             <svg class="h-6 w-6 text-gray-400 hover:text-red-400" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                 class="h-6 w-6">
@@ -28,9 +29,10 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 0 1 9 14.437V9.564Z" />
                             </svg>
-                        </a>
+                        </div>
                     @else
-                        <a href="{{ route('project.start', ['slug' => $item['slug']]) }}">
+                        <div class="cursor-pointer"
+                            wire:click="$dispatch('command-execute', { action: 'start', slug: '{{ $item['slug'] }}' })">
                             <svg class="h-6 w-6 text-gray-400 hover:text-green-400" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                 class="h-6 w-6">
@@ -39,7 +41,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
                             </svg>
-                        </a>
+                        </div>
                     @endif
                 @endif
 
