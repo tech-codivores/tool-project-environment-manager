@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Project\Edit as ProjectEdit;
+use App\Livewire\Stack\Edit as StackEdit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,11 @@ Route::prefix('project')
     ->name('project.')
     ->group(function () {
         Route::get('edit/{slug?}', ProjectEdit::class)->name('edit');
+
+    });
+
+Route::prefix('stack')
+    ->name('stack.')
+    ->group(function () {
+        Route::get('edit/{slug?}', StackEdit::class)->name('edit');
     });
