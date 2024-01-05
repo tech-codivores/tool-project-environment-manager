@@ -32,3 +32,9 @@ Route::prefix('stack')
         Route::get('/', StackIndex::class)->name('index');
         Route::get('edit/{slug?}', StackEdit::class)->name('edit');
     });
+
+Route::prefix('state')
+    ->name('state.')
+    ->group(function () {
+        Route::get('reset', StateResetController::class)->name('reset');
+    });
