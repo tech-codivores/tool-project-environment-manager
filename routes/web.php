@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Project\Edit as ProjectEdit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,3 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::prefix('project')
+    ->name('project.')
+    ->group(function () {
+        Route::get('edit/{slug?}', ProjectEdit::class)->name('edit');
+    });
