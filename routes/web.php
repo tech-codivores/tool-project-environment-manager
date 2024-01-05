@@ -2,6 +2,7 @@
 
 use App\Livewire\Project\Edit as ProjectEdit;
 use App\Livewire\Stack\Edit as StackEdit;
+use App\Livewire\Stack\Index as StackIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,6 @@ Route::prefix('project')
 Route::prefix('stack')
     ->name('stack.')
     ->group(function () {
+        Route::get('/', StackIndex::class)->name('index');
         Route::get('edit/{slug?}', StackEdit::class)->name('edit');
     });
