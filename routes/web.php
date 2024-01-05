@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Index;
 use App\Livewire\Project\Edit as ProjectEdit;
 use App\Livewire\Stack\Edit as StackEdit;
 use App\Livewire\Stack\Index as StackIndex;
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', Index::class)->name('index');
 
 Route::prefix('project')
     ->name('project.')
