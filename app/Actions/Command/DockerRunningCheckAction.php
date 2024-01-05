@@ -4,11 +4,11 @@ namespace App\Actions\Command;
 
 use Illuminate\Support\Facades\Process;
 
-class DockerRunningCheckAction
+class DockerRunningCheckAction extends BaseAction
 {
     public function run(): bool
     {
-        $result = Process::run('docker info');
+        $result = Process::run($this->commandPrefix() . 'docker info');
 
         return $result->successful();
     }

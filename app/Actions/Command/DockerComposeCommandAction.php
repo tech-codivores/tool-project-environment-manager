@@ -2,11 +2,12 @@
 
 namespace App\Actions\Command;
 
-class DockerComposeCommandAction
+class DockerComposeCommandAction extends BaseAction
 {
     public function run(string $action = null): string
     {
-        return 'docker compose'
+        return $this->commandPrefix()
+            . 'docker compose'
             . match ($action) {
                 'start' => ' up -d',
                 'stop' => ' down',
